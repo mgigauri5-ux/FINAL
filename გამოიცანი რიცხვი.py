@@ -8,11 +8,16 @@ from random import randint
 
 num = randint(1,100)
 
+#მცდელობების რაოდენობა
+
 i = 1
 
-print("guess the number from 1 to 100")
+max_attempts = 7   # მაქსიმალური მცდელობების რაოდენობა
 
-while True:
+print("guess the number from 1 to 100 (you have {max_attempts} attempts)!")
+
+while i <= max_attempts:
+
     try:
         guess = int(input(f"step #{i}. Your guess: "))
     except ValueError:
@@ -31,4 +36,7 @@ while True:
 
     print()
 
-print("Game over")
+if i > max_attempts:
+
+    print(f"Game over! You used all {max_attempts} attempts. The number was {num}.")    
+
