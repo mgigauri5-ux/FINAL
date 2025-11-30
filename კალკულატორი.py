@@ -3,6 +3,7 @@ print("ფინალური დავალება 1")
 # 2.1 კალკულატორი
 
 def calculator():
+    
     print("კალკულატორი — შეიყვანეთ ორი რიცხვი")
 
     #strip შლის ტექსტიდან ზედმეტ სიმბოლოებს
@@ -13,11 +14,12 @@ def calculator():
             raw2 = input("შეიყვანეთ მეორე რიცხვი: ").strip()
 
             # ანაცვლებს ,-ს . ით, რადგან სწორად აღიქვას რიცხვი
+            
             raw1 = raw1.replace(",", ".")
             raw2 = raw2.replace(",", ".")
 
-            num1 = float(raw1)
-            num2 = float(raw2)
+            num1 = eval(raw1)
+            num2 = eval(raw2)
 
             operation = input("აირჩიეთ ოპერაცია (+, -, *, /): ").strip()
 
@@ -46,13 +48,17 @@ def calculator():
 # გამორიცხავს პროგრამის გაჩერებას
 
         except ValueError:
+
             print("რიცხვი არასწორია — დარწმუნდით, რომ შეიყვანეთ სწორი ციფრები")
-            continue
-        except (KeyboardInterrupt, EOFError):
-            print("\nპროგრამა შეაჩერა მომხმარებელმა.")
+
             break
 
 # უზრუნველყოფს, რომ კოდი გაეშვება,
 
 if __name__ == "__main__":
+
     calculator()
+
+if __name__ == "__main__":
+    calculator()
+
